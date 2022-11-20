@@ -7,14 +7,12 @@
 
 ### How to install:
 ```Bash
-npm i biblegateway
+npm i biblegateway-scrape
 ```
 
 ### How to use (NodeJS):
 ```Nodejs
-const biblegateway = require("cheerio")
-
-const a = require("./index")
+const biblegateway = require("biblegateway-scrape")
 
 let x = async () => {
 	let result = await biblegateway("John 3:16")

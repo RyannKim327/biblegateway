@@ -1,5 +1,5 @@
 {
-  "name": "biblegateway",
+  "name": "biblegateway-scrape",
   "version": "0.0.1",
   "description": "A webscrape version of Biblegateway.com",
   "main": "index.js",
