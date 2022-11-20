@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "Bible tagalog",
+    "biblegateway",
+    "biblegateway-scrape",
+    "bible",
+    "Ang dating bibliya 1905"
+  ],
   "author": "RyannKim327",
   "license": "ISC",
   "dependencies": {
