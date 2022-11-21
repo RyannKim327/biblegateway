@@ -112,7 +112,7 @@ x()
 * TAG_MAGANDANG_BALITA_DC
 ---
 ### Note:
-> Some errors regarding to translations may have, I still trying to fix this kind of error, that maybe on my next version, this error will be fixed. If you found an error, you may send me the version thru  my [email](mailto:werysesw19@gmail.com), or thru my (Facebook page)[https://web.facebook.com/NOOBgrammer2001], or send a report thru my repository on github.
+> Some errors regarding to translations may have, I still trying to fix this kind of error, that maybe on my next version, this error will be fixed. If you found an error, you may send me the version thru  my [email](mailto:werysesw19@gmail.com), or thru my ([acebook page(https://web.facebook.com/NOOBgrammer2001), or send a report thru my repository on github.
 
 ### Final speech
 > This is just easy to use, maybe one of this days, I'm going to add its daily verses based on their server. Thank you for using, and I hope it helps.

@@ -1,6 +1,6 @@
 {
   "name": "biblegateway-scrape",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A webscrape version of Biblegateway.com",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,13 @@
     "axios": "^1.1.3",
     "cheerio": "^1.0.0-rc.12"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyannKim327/biblegateway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RyannKim327/biblegateway/issues"
+  },
+  "homepage": "https://github.com/RyannKim327/biblegateway#readme"
 }
