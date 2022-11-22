@@ -3,14 +3,16 @@
 
 ---
 
-> This is just a simple webscraoe of biblegateway, since I having osme difficulties in finding tagalog bible api.
+> This is just a simple webscraoe of biblegateway, since I having some difficulties in finding tagalog bible api.
+---
+## Text Verse:
 
 ### How to install:
 ```Bash
 npm i biblegateway-scrape
 ```
 
-### How to use (NodeJS):
+### How to use (NodeJS): .verse(verse, version)
 > Requested verse
 ```Nodejs
 const biblegateway = require("biblegateway-scrape")
@@ -27,13 +29,13 @@ x()
 ```JSON
 [
   {
-    "book": 'Juan 3:16',
+    "book": "Juan 3:16",
     "verse": "16 Sapagka't gayon na lamang ang pagsinta ng Dios sa sanglibutan, na ibinigay niya ang kaniyang bugtong na Anak, upang ang sinomang sa kaniya'y sumampalataya ay huwag mapahamak, kundi magkaroon ng buhay na walang hanggan. "
   }
 ]
 ```
 ---
-### How to use (NodeJS):
+### How to use (NodeJS): .dailyVerse(version)
 > Daily verse
 ```Nodejs
 const biblegateway = require("biblegateway-scrape")
@@ -111,8 +113,86 @@ x()
 * TAG_MAGANDANG_BALITA
 * TAG_MAGANDANG_BALITA_DC
 ---
+
+## Audio:
+
+### How to use (NodeJS): .audio(book_and_chapter, version)
+```Nodejs
+const biblegateway = require("biblegateway-scrape")
+
+let x = async () => {
+	let audio = await a.audio("James 1", a.audio_ver.KJV_PAUL_MIMS)
+	console.log(audio)
+}
+
+x()
+```
+### Result (JSON):
+```JSON
+{
+  "resultCode": 200,
+  "mp3": "https://stream.biblegateway.com/bibles/32/kjv-mims/Jas.1.bb77ae331a4eedfd200164ac42783056.mp3",
+  "ogg": "https://stream.biblegateway.com/bibles/32/kjv-mims/Jas.1.bb77ae331a4eedfd200164ac42783056.ogg"
+}
+```
+
+---
+
+### Versions:
+* CSB_JON_MOHR
+* ESV_MAX_MCLEAN
+* ESV_MARQUIS_LAUGHLIN
+* GNV_STEVE_COOK
+* HCSB_DALE_MCCONACHIE
+* KJV_MAX_MCLEAN
+* KJV_PAUL_MIMS
+* KJV_DRAMATIZED
+* LEB_LOGOS
+* MSG_KELLY_RYAN_DOLAN
+* NASB_DALE_MCCONACHIE
+* NASB1995_DALE_MCCONACHIE
+* NIV_MAX_MCLEAN
+* NIV_DRAMATIZED
+* NIV_GEORGE_W_SARRIS
+* NIVUK_DAVID_SUCHET
+* NKJV_SIMON_BUBB
+* NKJV_TINASHA_LARAYE
+* NLT_BREATHE
+
+
 ### Note:
-> Some errors regarding to translations may have, I still trying to fix this kind of error, that maybe on my next version, this error will be fixed. If you found an error, you may send me the version thru  my [email](mailto:werysesw19@gmail.com), or thru my ([acebook page(https://web.facebook.com/NOOBgrammer2001), or send a report thru my repository on github.
+> Some errors regarding to translations may have, I still trying to fix this kind of error, that maybe on my next version, this error will be fixed. If you found an error, you may send me the version thru  my [email](mailto:werysesw19@gmail.com), or thru my [facebook page](https://web.facebook.com/NOOBgrammer2001), or send a report thru my repository on github.
 
 ### Final speech
 > This is just easy to use, maybe one of this days, I'm going to add its daily verses based on their server. Thank you for using, and I hope it helps.
+
+---
+
+### Credits
+> Facebook Bot
+* Salvador
+* John Jeremy Antiguo
+* Callback Developers
+* Earl Shine Sawir
+* John Pau; Caigas
+* Lester Navarra
+* Mark Kevin Manalo
+* Rovie Francisco
+* Jerson Carin
+
+> NodeJS exploration
+* Mart Anthony Salazar
+* John Roy Lapida Calimlim
+
+> NPMJS Package Related
+* John Paul Caigas
+* Lester Navarra
+
+> Website
+* Bible Gateway
+* NPMJS
+* Replit
+* Github
+* Stackoverflow
+* Facebook
+* GeeksforGeeks
