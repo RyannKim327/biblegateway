@@ -22,8 +22,8 @@ let detect = (_book) => {
 		"jude", "rev"
 	]
 	for(let l in list){
-		if(b.startsWith(l)){
-			book = l
+		if(b.startsWith(list[l])){
+			book = list[l]
 			break
 		}
 	}

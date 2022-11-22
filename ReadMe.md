@@ -1,6 +1,9 @@
 # Biblegateway scrape
 ### MPOP Reverse II
 
+<p style="background-color:red">0.0.3 Update has an error, kindly update it.</p>
+<p style="background-color:green">Fixed minor issue about audio verse.</p>
+
 ---
 
 > This is just a simple webscraoe of biblegateway, since I having some difficulties in finding tagalog bible api.
@@ -9,7 +12,7 @@
 
 ### How to install:
 ```Bash
-npm i biblegateway-scrape
+npm i biblegateway-scrape@latest
 ```
 
 ### How to use (NodeJS): .verse(verse, version)
@@ -52,6 +55,9 @@ x()
 ### Versions:
 #### Cebuano
 * CEB_ANG_PULONG_SA_DIOS
+
+#### Ilonngo
+* ILO_ANG_PULONG_SANG_DIOS_HLGN
 
 #### English
 * ENG_KJV_21
