@@ -1,6 +1,6 @@
 {
   "name": "biblegateway-scrape",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A webscrape version of Biblegateway.com",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,9 @@
     "biblegateway",
     "biblegateway-scrape",
     "bible",
-    "Ang dating bibliya 1905"
+    "Ang dating bibliya 1905",
+    "audio verses",
+    "audio bible"
   ],
   "author": "RyannKim327",
   "license": "ISC",
