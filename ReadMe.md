@@ -38,13 +38,22 @@ x()
 ]
 ```
 ---
-### How to use (NodeJS): .dailyVerse(version)
+### How to use (NodeJS): .dailyVerse(version [, [year(int), month(int), date(int)] ])
 > Daily verse
 ```Nodejs
 const biblegateway = require("biblegateway-scrape")
 
 let x = async () => {
 	let result = await biblegateway.dailyVerse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905)
+	console.log(result)
+}
+
+let sampleWithDate = async () => {
+  let date = new Date()
+	let year = date.getFullYear()
+	let month = date.getMonth() + 1
+	let day = date.getDate()
+	let result = await biblegateway.dailyVerse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905, [year, month, day])
 	console.log(result)
 }
 
