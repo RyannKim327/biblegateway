@@ -120,8 +120,8 @@ x()
 
 #### Tagalog
 * TAG_ANG_BAGONG_TIPAN
-* TAG_ANG_BIBLIIA_1978
-* TAG_ANG_BIBLIIA_2001
+* TAG_ANG_BIBLIA_1978
+* TAG_ANG_BIBLIA_2001
 * TAG_ANG_DATING_BIBLIYA_1905
 * TAG_ANG_SALITA_NG_DIYOS_TCB
 * TAG_ANG_SALITA_NG_DIYOS
@@ -179,7 +179,7 @@ x()
 > Some errors regarding to translations may have, I still trying to fix this kind of error, that maybe on my next version, this error will be fixed. If you found an error, you may send me the version thru  my [email](mailto:werysesw19@gmail.com), or thru my [facebook page](https://web.facebook.com/NOOBgrammer2001), or send a report thru my repository on github.
 
 ### Final speech
-> This is just easy to use, maybe one of this days, I'm going to add its daily verses based on their server. Thank you for using, and I hope it helps.
+> The program is still in development, as of now, I'm looking for some errors, specially to the others translations. If ever that you've found a version with error, kindly message my facebook page, which is mentioned above. Thank you for using, and I hope it helps.
 
 ---
 
