@@ -145,9 +145,9 @@ x()
 ### Result (JSON):
 ```JSON
 {
-  "resultCode": 200,
-  "mp3": "https://stream.biblegateway.com/bibles/32/kjv-mims/Jas.1.bb77ae331a4eedfd200164ac42783056.mp3",
-  "ogg": "https://stream.biblegateway.com/bibles/32/kjv-mims/Jas.1.bb77ae331a4eedfd200164ac42783056.ogg"
+	"resultCode": 200,
+	"mp3": "https://stream.biblegateway.com/bibles/32/kjv-mims/Jas.1.bb77ae331a4eedfd200164ac42783056.mp3",
+	"copyright": "© 2007 All Rights Reserved The Spoken Word of God."
 }
 ```
 
@@ -180,7 +180,9 @@ x()
 
 ### Final speech
 > The program is still in development, as of now, I'm looking for some errors, specially to the others translations. If ever that you've found a version with error, kindly message my facebook page, which is mentioned above. Thank you for using, and I hope it helps.
-
+---
+### Changes
+> The project was changed from its last update, I've found some errors regarding to the other translations, or maybe one of the errors having is thru the update of the platfrorm. Another one is the ogg file was removed, so that we may only use the mp3 file format. If ever that you want to use this project, kindly give credits to the biblegateway, I'm just a way to create a better package for you to use their service. And kindly add the copyright, for you to have the permission to use their resources.
 ---
 
 ### Credits

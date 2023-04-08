@@ -43,8 +43,7 @@ let detect = (_book) => {
 module.exports = async (verse, version) => {
 	let result = {
 		resultCode: 404,
-		mp3: "Undefined audio, please read the documentation.",
-		ogg: "Undefined audio, please read the documentation."
+		mp3: "Undefined audio, please read the documentation."
 	}
 	if(version.startsWith("audio")){
 		let vers = version.split(" ")[1]
@@ -56,13 +55,13 @@ module.exports = async (verse, version) => {
 
 		let { data } = await axios.get(`https://www.biblegateway.com/audio/${vers}/${verse}`)
 		let $ = await cheerio.load(data)
-		let au = $("#audio-player-element").children("source")[0].attribs.src
-		let dio = $("#audio-player-element").children("source")[1].attribs.src
+		let au = await $("#audio-player-element").children("source").attr()['src']
+		let copy = await $("div[class='copyright-text']").text().replace(/\n/gi, "").replace(/  /gi, "")
 		// https://www.biblegateway.com/audio/dramatized/niv/Ps.119
 		result = {
 			resultCode: 200,
 			mp3: au,
-			ogg: dio
+			copyright: copy
 		}
 	}
 	//console.log(result.data)
