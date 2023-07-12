@@ -1,6 +1,6 @@
 {
   "name": "biblegateway-scrape",
-  "version": "0.0.6-audio-initial-fix",
+  "version": "0.0.6",
   "description": "A webscrape version of Biblegateway.com",
   "main": "index.js",
   "scripts": {
