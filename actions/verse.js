@@ -8,7 +8,6 @@ let search = async (verse, ver = "") => {
 	if(isBaybayin){
 		version = ver.replace("baybay-", "")
 	}
-	console.log(ver)
 	let { data } = await axios.get(`https://www.biblegateway.com/passage/?search=${verse}&version=${version}`)
 	let $ = await cheerio.load(data)
 	let html = $(".passage-table")

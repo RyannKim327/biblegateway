@@ -15,22 +15,6 @@ let search = async (verse, ver, today=[]) => {
 	let $ = await cheerio.load(data)
 	let html = $(".rp-passage")
 	let _ = []
-	/* html.each((i, e) => {
-		let base = $(e).find(`div[class='passage-col passage-col-mobile version-${ver}']`)
-		let book = $(base).find(".dropdown-display-text")[0].children[0].data
-		let content = $(base).find(".std-text")
-		if(content.html() == null)
-			content = $(base).find(".verse")
-		let verse = ""
-		content.each((i, f) => {
-			verse += $(f).text() + "\n"
-		})
-		let json = {
-			"book": book,
-			"verse": verse
-		}
-		_.push(json)
-	})*/
 	let book = html.find(".rp-passage-display").text()
 	let _verse = html.find(".verse").text()
 	let json = {
