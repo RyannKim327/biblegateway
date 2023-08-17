@@ -186,10 +186,10 @@ x()
 
 
 ### Note:
-> Some errors regarding to translations may have, I still trying to fix this kind of error, that maybe on my next version, this error will be fixed. If you found an error, you may send me the version thru  my [email](mailto:werysesw19@gmail.com), or thru my [facebook page](https://web.facebook.com/NOOBgrammer2001), or send a report thru my repository on github.
+> Some errors regarding to translations may have, I still trying to fix this kind of error, that maybe on my next version, this error will be fixed. If you found an error, you may send me the version thru  my [email](mailto:werysesw19@gmail.com), or thru my [facebook page](https://web.facebook.com/NOOBgrammer2001), or create an issue thru my repository on github.
 
 ### Final speech
-> The program is still in development, as of now, I'm looking for some errors, specially to the others translations. If ever that you've found a version with error, kindly message my facebook page, which is mentioned above. Thank you for using, and I hope it helps. I also added baybayin scripting, but the baybayin script version has bugs still
+> The program is still in development, as of now, I'm looking for some errors, specially to the others translations. If ever that you've found a version with error, kindly message my facebook page, which is mentioned above. Thank you for using, and I hope it helps. I also added baybayin scripting, but the baybayin script version has bugs still.
 ---
 ### Changes
 > The project was changed from its last update, I've found some errors regarding to the other translations, or maybe one of the errors having is thru the update of the platfrorm. Another one is the ogg file was removed, so that we may only use the mp3 file format. If ever that you want to use this project, kindly give credits to the biblegateway, I'm just a way to create a better package for you to use their service. And kindly add the copyright, for you to have the permission to use their resources.

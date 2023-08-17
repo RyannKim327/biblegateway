@@ -15,6 +15,9 @@ let search = async (verse, ver = "") => {
 	html.each((i, e) => {
 		let base = $(e).find(`div[class='passage-col passage-col-mobile version-${version}']`)
 		let book = $(base).find(".dropdown-display-text")[0].children[0].data
+		if(isBaybayin){
+			book = baybayin(book)
+		}
 		let content = $(base).find(".std-text")
 		if(content.html() == null){
 			content = $(base).find(".verse")
@@ -32,7 +35,7 @@ let search = async (verse, ver = "") => {
 		let verse = ""
 		content.each((i, f) => {
 			if(isBaybayin){
-				verse += baybayin.toBaybayin($(f).text()) + "\n"
+				verse += baybayin($(f).text()) + "\n"
 			}else{
 				verse += $(f).text() + "\n"
 			}

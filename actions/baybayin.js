@@ -1,145 +1,71 @@
-const baybay = {
-	"A": 5888, "E": 5889, "O": 5890,
-	"b": 5898, "k": 5891, "d": 5895,
-	"g": 5892, "h": 5905, "l": 5902,
-	"m": 5899, "n": 5896, "ng": 5893,
-	"p": 5897, "s": 5904, "t": 5894,
-	"w": 5903, "y": 5900,
-	"e": 5906, "o": 5907, "a": 5908,
-	".": 5942, ",": 5941
-}
-const toString = (code) => {
-	return String.fromCharCode(code)
-}
+const baybay_consonants = [
+	5898, 5891, 5895,
+	5892, 5905, 5902,
+	5899, 5896,
+	5897, 5904, 5894,
+	5903, 5900
+]
 
-const toBaybayin = (str) => {
-	str = str.trim().toLowerCase().replace(/\?|\!|\//gi, ".").replace(/r/gi, "d").replace(/i/gi, "e").replace(/u/gi, "o").replace(/x|z/gi, "s").replace(/c|q/gi, "k").replace(/j/gi, "dy").replace(/f/gi, "p").replace(/v/gi, "b")
-	let r = ""
-	for(let c = 0; c < str.length; c++){
-		if(c < str.length - 1){
-			if(str.charAt(c) == 'a'){
-				r += toString(baybay.A)
-			}else if(str.charAt(c) == 'e'){
-				r += toString(baybay.E)
-			}else if(str.charAt(c) == 'o'){
-				r += toString(baybay.O)
-			}else if(str.charAt(c) == "n" && str.charAt(c + 1) == "g" && str[c - 1]){
-				let d = str.charAt(c + 2)
-				if(str.length > 4){
-					if(str.charAt(c - 1) == " " && str.charAt(c + 2) == " "){
-						r += toString(baybay.n) + toString(baybay.ng) + toString(baybay.a)
-						c += 1
-					}else{
-						// r += toString(baybay.n) + toString(baybay.ng) + toString(baybay.a)
-						r += toString(baybay.ng)
-						if(d == 'e' && d != 'a'){
-							r += toString(baybay.e)
-						}else if(d == 'o' && d != 'a'){
-							r += toString(baybay.o)
-						}else if(d != 'a'){
-							r += toString(baybay.a)
-							c--
-						}
-						c += 2
-					}
-				}else{
-					r += toString(baybay.n) + toString(baybay.ng) + toString(baybay.a)
-					// r += toString(baybay.ng)
-					if(d == 'e' && d != 'a'){
-						r += toString(baybay.e)
-					}else if(d == 'o' && d != 'a'){
-						r += toString(baybay.o)
-					}else if(d != 'a'){
-						r += toString(baybay.a)
-						c--
-					}
-					c += 2
-				}
-			}else if(str.charAt(c) == "m" && str.charAt(c + 1) == "g"){
-				let d = str.charAt(c + 2)
-				if(str.length > 4){
-					if(str.charAt(c - 1) == " " && str.charAt(c + 2) == " "){
-						r += toString(baybay.m)
-						r += toString(baybay.ng)
-					}else{
-						r += toString(baybay.m)
-						r += toString(baybay.ng)
-						if(d == 'e' && d != 'a'){
-							r += toString(baybay.e)
-						}else if(d == 'o' && d != 'a'){
-							r += toString(baybay.o)
-						}else if(d != 'a'){
-							r += toString(baybay.a)
-							c--
-						}
-						c += 2
-					}
-				}else{
-					r += toString(baybay.m)
-					r += toString(baybay.ng)
-					if(d == 'e' && d != 'a'){
-						r += toString(baybay.e)
-					}else if(d == 'o' && d != 'a'){
-						r += toString(baybay.o)
-					}else if(d != 'a'){
-						r += toString(baybay.a)
-						c--
-					}
-					c += 2
-				}
-			}else if ((str.charAt(c) == "," && str.charAt(c + 1) == " ") || (str.charAt(c) == "." && str.charAt(c + 1) == " ")){
-				r += toString(baybay[str.charAt(c)]) + " "
-			}else if(baybay[str.charAt(c)] == undefined && str.charAt(c) != 'a'){
-				r += str.charAt(c)
+const baybayin_ng = 5893
+
+const baybay_vowels = [
+	5906, 5907, 5908
+]
+
+const baybayin_i_vowels = [
+	5888, 5889, 5890
+]
+
+const consonants = [
+	"b", "k", "d",
+	"g", "h", "l",
+	"m", "n",
+	"p", "s", "t",
+	"w", "y"
+]
+
+const vowels = [
+	"a", "e", "o"
+]
+
+module.exports = (data) => {
+	let result = ""
+	let original = data
+	data = data.toLowerCase().replace(/juan/gi, "huwan").replace(/jesus/gi, "hesus").replace(/josue/gi, "hoswe").replace(/mateo/gi, "mateyo").replace(/timoteo/gi, "timoteyo").replace(/ezekiel/gi, "ezekiyel")
+	data = data.replace(/i/gi, "e").replace(/u/gi, "o").replace(/r/gi, "d").replace(/mga/gi, "manga").replace(/f/gi, "p").replace(/c|q/gi, "k").replace(/v/gi, "b").replace(/x|z/gi, "s").replace(/j/gi, "dy").replace(/\sng\s/gi, " nang ").replace(/\.|\?|!/gi, String.fromCharCode(5942)).replace(/,/gi, String.fromCharCode(5941))
+	
+	for(let i = 0; i < data.length; i++){
+		if(consonants.includes(data[i])){
+			if(data[i] == "n" && data[i + 1] == "g"){
+				result += String.fromCharCode(baybayin_ng)
+				i++
 			}else{
-				let d = str.charAt(c + 1)
-				r += toString(baybay[str.charAt(c)])
-				if(d == 'e' && d != 'a'){
-					r += toString(baybay.e)
-				}else if(d == 'o' && d != 'a'){
-					r += toString(baybay.o)
-				}else if(d != 'a'){
-					r += toString(baybay.a)
-					c--
+				for(let j in consonants){
+					if(consonants[j] == data[i]){
+						result += String.fromCharCode(baybay_consonants[j])
+					}
 				}
-				c++
+			}
+			if(data[i + 1] == "e"){
+				result += String.fromCharCode(baybay_vowels[0])
+			}else if(data[i + 1] == "o"){
+				result += String.fromCharCode(baybay_vowels[1])
+			}else if(data[i + 1] != "a"){
+				result += String.fromCharCode(baybay_vowels[2])
+				i--
+			}
+			i++
+		}else if(vowels.includes(data[i])){
+			console.log(data[i])
+			for(let j in vowels){
+				if(data[i] == vowels[j]){
+					result += String.fromCharCode(baybayin_i_vowels[j])
+				}
 			}
 		}else{
-			if(str.charAt(c) == 'a'){
-				r += toString(baybay.A)
-			}else if(str.charAt(c) == 'e'){
-				r += toString(baybay.E)
-			}else if(str.charAt(c) == 'o'){
-				r += toString(baybay.O)
-			}else{
-				r += toString(baybay[str.charAt(c)])
-				const lists = [
-					'b', 'k' ,'d', 'g', 'h',
-					'l',' m', 'n', 'p', 's',
-					't', 'w', 'y'
-				]
-				if(str.charAt(c).includes(lists)){
-					r += toString(baybay.a)
-				}
-				if((str[c - 1] == "." || str[c - 1] == ",") && str[c] == " "){
-					c--
-				}
-			}
+			result += data[i]
 		}
 	}
-	const lists = [
-		'b', 'k' ,'d', 'g', 'h',
-		'l',' m', 'n', 'p', 's',
-		't', 'w', 'y'
-	]
-	for(let i = 0; i < lists.length; i++){
-		if(str.endsWith(lists[i])){
-			r += toString(baybay.a)
-		}
-	}
-	return r
-}
 
-module.exports = {
-	toBaybayin
+	return result
 }
