@@ -50,7 +50,7 @@ let sampleWithDate = async () => {
 	let year = date.getFullYear()
 	let month = date.getMonth() + 1
 	let day = date.getDate()
-	let result = await biblegateway.dailyVerse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905, [year, month, day])
+	let result = await biblegateway.daily_verse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905, [year, month, day])
 	console.log(result)
 }
 
