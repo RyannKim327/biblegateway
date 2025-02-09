@@ -1,11 +1,16 @@
 {
   "name": "biblegateway-scrape",
-  "version": "0.0.7-beta",
+  "version": "0.0.8",
   "description": "A webscrape version of Biblegateway.com",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "tsx test"
   },
+  "files": [
+    "dist"
+  ],
+  "module": "NodeNext",
   "keywords": [
     "Bible tagalog",
     "biblegateway",
@@ -29,5 +34,9 @@
     "url": "https://github.com/RyannKim327/biblegateway/issues"
   },
   "homepage": "https://github.com/RyannKim327/biblegateway#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
 }

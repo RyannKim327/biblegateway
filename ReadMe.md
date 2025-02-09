@@ -1,12 +1,9 @@
 # Biblegateway scrape
 ### MPOP Reverse II
 
-<p style="background-color:red">0.0.3 Update has an error, kindly update it.</p>
-<p style="background-color:green">Fixed minor issue about audio verse.</p>
-
 ---
 
-> This is just a simple webscraoe of biblegateway, since I having some difficulties in finding tagalog bible api.
+> This is just a simple webscrape of biblegateway, since I having some difficulties in finding tagalog bible api.
 ---
 ## Text Verse:
 
@@ -38,13 +35,13 @@ x()
 ]
 ```
 ---
-### How to use (NodeJS): .dailyVerse(version [, [year(int), month(int), date(int)] ])
+### How to use (NodeJS): .daily_verse(version [, [year(int), month(int), date(int)] ])
 > Daily verse
 ```Nodejs
 const biblegateway = require("biblegateway-scrape")
 
 let x = async () => {
-	let result = await biblegateway.dailyVerse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905)
+	let result = await biblegateway.daily_verse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905)
 	console.log(result)
 }
 
@@ -146,7 +143,7 @@ x()
 const biblegateway = require("biblegateway-scrape")
 
 let x = async () => {
-	let audio = await a.audio("James 1", a.audio_ver.KJV_PAUL_MIMS)
+	let audio = await a.audio("James 1", a.audio_version.KJV_PAUL_MIMS)
 	console.log(audio)
 }
 
