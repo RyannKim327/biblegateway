@@ -26,7 +26,7 @@ const consonants = [
 
 const vowels = ["a", "e", "o"];
 
-export default async function baybayin(data: string) {
+export default function baybayin(data: string) {
   let result = "";
   let original = data;
   data = data
@@ -73,7 +73,6 @@ export default async function baybayin(data: string) {
       }
       i++;
     } else if (vowels.includes(data[i])) {
-      console.log(data[i]);
       for (let j in vowels) {
         if (data[i] == vowels[j]) {
           result += String.fromCharCode(baybayin_i_vowels[j]);

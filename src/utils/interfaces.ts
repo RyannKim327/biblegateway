@@ -9,5 +9,5 @@ export interface audio_result {
 
 export interface verse_result {
   book: string;
-  verse: string;
+  verses: string[];
 }
