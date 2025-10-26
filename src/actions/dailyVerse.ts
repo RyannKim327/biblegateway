@@ -2,6 +2,7 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 import { verse_result, version } from "../utils/interfaces";
 import { ENG_KING_JAMES_VERSION } from "./version";
+import baybayin from "./baybayin";
 
 let search = async (
   version?: version,
@@ -58,13 +59,13 @@ let search = async (
 };
 
 export default async function daily_verse(
-  ver: version,
+  version?: version,
   today?: [number?, number?, number?],
 ) {
   // let { data } = await axios.get("https://www.biblegateway.com");
   // let $ = await cheerio.load(data);
   // let html = $(".passage-box");
   // let book = $(html).find(".citation").text();
-  let verse = await search(ver, today);
+  let verse = await search(version, today);
   return verse;
 }

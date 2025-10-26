@@ -141,8 +141,8 @@ let search = async (
 
 export default async function verse(
   passage: string,
-  ver: version,
+  version?: version,
 ): Promise<verse_result> {
-  let data: verse_result = await search(passage, ver);
+  let data: verse_result = await search(passage, version);
   return data;
 }
