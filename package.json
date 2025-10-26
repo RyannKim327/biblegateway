@@ -1,6 +1,6 @@
 {
   "name": "biblegateway-scrape",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A webscrape version of Biblegateway.com",
   "main": "dist/index.js",
   "scripts": {
