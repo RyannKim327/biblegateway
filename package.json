@@ -1,11 +1,11 @@
 {
   "name": "biblegateway-scrape",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A webscrape version of Biblegateway.com",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "tsx src/test"
+    "test": "tsx test"
   },
   "files": [
     "dist"

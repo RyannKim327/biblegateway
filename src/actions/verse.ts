@@ -10,7 +10,8 @@ let search = async (
   version?: version,
 ): Promise<verse_result> => {
   // TODO: Setting up as default version
-  if (version === undefined) {
+
+  if (!version) {
     version = ENG_KING_JAMES_VERSION;
   }
 
@@ -47,7 +48,11 @@ let search = async (
     `div[class='passage-col passage-col-mobile version-${version}']`,
   );
 
-  let book = $(base).find(".dropdown-display-text")[0].children[0].data;
+  let book: string = $(base)
+    .find(".dropdown-display-text")
+    .first()
+    .text()
+    .trim();
 
   if (isBaybayin) {
     book = baybayin(book);
@@ -57,7 +62,7 @@ let search = async (
   const v = $(base).find("div.passage-text");
   const p = $(v).find("p > span.text");
 
-  p.each((i: number, c: unknown) => {
+  p.each((i: number, c: any) => {
     const text: string = $(c).text();
     if (isBaybayin) {
       contents.push(baybayin(text));
@@ -137,7 +142,7 @@ let search = async (
 export default async function verse(
   passage: string,
   ver: version,
-): Promise<verse_result[]> {
-  let data = await search(passage, ver);
+): Promise<verse_result> {
+  let data: verse_result = await search(passage, ver);
   return data;
 }
