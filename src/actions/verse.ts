@@ -58,7 +58,6 @@ let search = async (
     book = baybayin(book);
   }
 
-  // TODO: Data filtering
   const v = $(base).find("div.passage-text");
   const p = $(v).find("p > span.text");
 
@@ -71,70 +70,9 @@ let search = async (
     }
   });
 
-  // INFO: Start
-  // let content = $(base).find(".std-text");
-  // if (content.html() == null) {
-  //   content = $(base).find(".verse");
-  // }
-  // if (content.html() == null) {
-  //   content = $(base).find(".woj");
-  // }
-  // if (content.html() == null) {
-  //   content = $(base).find(".text");
-  // }
-  // if (content.html() == null) {
-  //   base = $(e).find(
-  //     `div[class='version-${version} result-text-style-normal text-html']`,
-  //   );
-  //   const std = base(e).find("div[class='std-text]");
-  //   const p = std(e).findAll("p");
-  //   content = p;
-  //   console.log(p);
-  // }
-
-  // let verse = "";
-  //
-  // contents.map((i: number, f: unknown) => {
-  //   if (isBaybayin) {
-  //     verse += baybayin($(f).text()) + "\n";
-  //   } else {
-  //     verse += $(f).text() + "\n";
-  //   }
-  // });
-
-  // TODO: End
-
-  // if(verse == ""){
-  // 	base = $(e).find(`div[class='version-${ver} result-text-style-normal text-html']`)
-  // 	content = $(base).find(".woj")
-
-  // 	console.log("test ")
-  // 	verse = ""
-  // }
-  // content.each((i, f) => {
-  // 	verse += $(f).text() + "\n"
-  // })
-  // if(verse == ""){
-  // 	base = $(e).find(`div[class='version-${ver} result-text-style-normal text-html']`)
-  // 	content = $(base).find(".text")
-  // 	verse = ""
-  // }
-  // content.each((i, f) => {
-  // 	verse += $(f).text() + "\n"
-  // })
-  // if(verse == ""){
-  // 	base = $(e).find(`div[class='version-${ver} result-text-style-normal text-html']`)
-  // 	content = base
-  // 	verse = ""
-  // }
-
-  // contents.each((i, f) => {
-  //	verse += $(f).text() + "\n"
-  // })
-
   let json: verse_result = {
     book: book,
-    verses: contents, // verse.replace(/\\x00/, ""),
+    verses: contents,
   };
   return json;
 };

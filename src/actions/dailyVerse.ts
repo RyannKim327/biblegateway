@@ -62,10 +62,6 @@ export default async function daily_verse(
   version?: version,
   today?: [number?, number?, number?],
 ) {
-  // let { data } = await axios.get("https://www.biblegateway.com");
-  // let $ = await cheerio.load(data);
-  // let html = $(".passage-box");
-  // let book = $(html).find(".citation").text();
   let verse = await search(version, today);
   return verse;
 }
