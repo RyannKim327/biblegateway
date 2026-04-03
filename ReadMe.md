@@ -1,255 +1,154 @@
-# Biblegateway scrape
+# Bible Gateway Scrape
 
-### MPOP Reverse II
-
----
-
-> This is just a simple webscrape of biblegateway, since I having some difficulties in finding tagalog bible api. [Full documentation](/DOCS.md)
+A simple yet powerful web scraper for BibleGateway.com, providing access to various Bible versions including Tagalog and even Baybayin transliteration.
 
 ---
 
-## Text Verse:
+## 🚀 Features
 
-### How to install:
+- **Text Verses**: Fetch any verse from Bible Gateway.
+- **Daily Verse**: Get the "Verse of the Day".
+- **Audio Bible**: Retrieve MP3 links for various audio Bible versions.
+- **Baybayin Support**: Transliterated Tagalog bibles into Baybayin script.
+- **TypeScript Support**: Fully typed for a better development experience.
 
-```Bash
-npm i biblegateway-scrape@latest
+---
+
+## 📦 Installation
+
+```bash
+npm install biblegateway-scrape@latest
 ```
 
-### How to use (NodeJS): .verse(verse, version)
+---
 
-> Requested verse
+## 📖 How to Use
 
-```Nodejs
-const biblegateway = require("biblegateway-scrape")
+### 1. Fetching a Verse
 
-let x = async () => {
-	let result = await biblegateway.verse("John 3:16", biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905)
-	console.log(result)
+```typescript
+const biblegateway = require("biblegateway-scrape");
+
+async function getVerse() {
+  const result = await biblegateway.verse("John 3:16", biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905);
+  console.log(result);
 }
 
-x()
+getVerse();
 ```
 
-### Output (JSON array):
-
-```JSON
-[
-  {
-    "book": "Juan 3:16",
-    "verse": "16 Sapagka't gayon na lamang ang pagsinta ng Dios sa sanglibutan, na ibinigay niya ang kaniyang bugtong na Anak, upang ang sinomang sa kaniya'y sumampalataya ay huwag mapahamak, kundi magkaroon ng buhay na walang hanggan. "
-  }
-]
-```
-
----
-
-### How to use (NodeJS): .daily_verse(version [, [year(int), month(int), date(int)] ])
-
-> Daily verse
-
-```Nodejs
-const biblegateway = require("biblegateway-scrape")
-
-let x = async () => {
-	let result = await biblegateway.daily_verse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905)
-	console.log(result)
-}
-
-let sampleWithDate = async () => {
-  let date = new Date()
-	let year = date.getFullYear()
-	let month = date.getMonth() + 1
-	let day = date.getDate()
-	let result = await biblegateway.daily_verse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905, [year, month, day])
-	console.log(result)
-}
-
-x()
-```
-
----
-
-### Versions:
-
-#### Cebuano
-
-- CEB_ANG_PULONG_SA_DIOS
-
-#### Ilonngo
-
-- ILO_ANG_PULONG_SANG_DIOS_HLGN
-
-#### English
-
-- ENG_KJV_21
-- ENG_AMERICAN_STANDARD_VERSION
-- ENG_AMPLIFIED_BIBLE
-- ENG_AMPLIFIED_BIBLE_CLASSIC
-- ENG_BRG_BIBLE
-- ENG_CHRISTIAN_STANDARD_BIBLE
-- ENG_COMMON_ENLISH_BIBLE
-- ENG_COMPLETE_JEWISH_BIBLE
-- ENG_CONTEMPORARY_ENGLISH_VERSION
-- ENG_DARBY_TRANSLATION
-- ENG_DISIPLES_LITERAL_NEW_TESTAMENT
-- ENG_DOUAY_RHEIMS_1899
-- ENG_EASY_TO_READ_VERSION
-- ENG_EVANGELICAL_HERITAGE_VERSION
-- ENG_ENLISH_STANDARD_VERSION
-- ENG_ENLISH_STANDARD_VERSION_ANGLICISED
-- ENG_EXPANDED_BIBLE
-- ENG_1599_GENEVA_BIBLE
-- ENG_GODS_WORD_TRANSLATION
-- ENG_GOOD_NEWS_TRANSLATION
-- ENG_HOLMAN_CHRISTIAN_STANDARD_BIBLE
-- ENG_INTERNATIONAL_CHILDRENS_BIBLE
-- ENG_INTERNATIONAL_STANDARD_VERSION
-- ENG_JB_PHILLIPS_NEW_TESTAMENT
-- ENG_JUBILEE_BIBLE_2000
-- ENG_KING_JAMES_VERSION
-- ENG_AUTHORIZED_KING_JAMES_VERSION
-- ENG_LEXHAM_ENGLISH_BIBLE
-- ENG_LIVING_BIBLE
-- ENG_THE_MESSAGE
-- ENG_MODERN_ENGLISH_VERSION
-- ENG_MOUNCE_REVERSE_INTERLINEAR_NEW_TESTAMENT
-- ENG_NAMES_OF_GOD_BIBLE
-- ENG_NEW_AMERICAN_BIBLE_REVISED_EDITION
-- ENG_NEW_AMERICAN_STANDARD_BIBLE
-- ENG_NEW_AMERICAN_STANDARD_BIBLE_1995
-- ENG_NEW_CATHOLIC_BIBLE
-- ENG_NEW_CENTURY_VERSION
-- ENG_NEW_ENGLISH_TRANSLATION
-- ENG_NEW_INTERNATIONAL_READERS_VERSION
-- ENG_NEW_INTERNATIONAL_VERSION
-- ENG_NEW_INTERNATIONAL_VERSION_UK
-- ENG_NEW_KING_JAMES_VERSION
-- ENG_NEW_LIFE_VERSION
-- ENG_NEW_LIVING_TRANSLATION
-- ENG_NEW_MATTHEW_BIBLE
-- ENG_NEW_REVISED_STANDARD_VERSION_ANGLICISED
-- ENG_NEW_REVISED_STANDARD_VERSION_ANGLICISED_CATHOLIC_EDITION
-
-#### Tagalog
-
-- TAG_ANG_BAGONG_TIPAN
-- TAG_ANG_BIBLIA_1978
-- TAG_ANG_BIBLIA_2001
-- TAG_ANG_DATING_BIBLIYA_1905
-- TAG_ANG_SALITA_NG_DIYOS_TCB
-- TAG_ANG_SALITA_NG_DIYOS
-- TAG_MAGANDANG_BALITA
-- TAG_MAGANDANG_BALITA_DC
-
-#### Baybayin
-
-- BAYBAYIN_ANG_BAGONG_TIPAN
-- BAYBAYIN_ANG_BIBLIA_1978
-- BAYBAYIN_ANG_BIBLIA_2001
-- BAYBAYIN_ANG_DATING_BIBLIYA_1905
-- BAYBAYIN_ANG_SALITA_NG_DIYOS_TCB
-- BAYBAYIN_ANG_SALITA_NG_DIYOS
-- BAYBAYIN_MAGANDANG_BALITA
-- BAYBAYIN_MAGANDANG_BALITA_DC
-
----
-
-## Audio:
-
-### How to use (NodeJS): .audio(book_and_chapter, version)
-
-```Nodejs
-const biblegateway = require("biblegateway-scrape")
-
-let x = async () => {
-	let audio = await a.audio("James 1", a.audio_version.KJV_PAUL_MIMS)
-	console.log(audio)
-}
-
-x()
-```
-
-### Result (JSON):
-
-```JSON
+**Output:**
+```json
 {
-	"resultCode": 200,
-	"mp3": "https://stream.biblegateway.com/bibles/32/kjv-mims/Jas.1.bb77ae331a4eedfd200164ac42783056.mp3",
-	"copyright": "© 2007 All Rights Reserved The Spoken Word of God."
+  "book": "Juan 3:16",
+  "verses": [
+    "16 Sapagka't gayon na lamang ang pagsinta ng Dios sa sanglibutan, na ibinigay niya ang kaniyang bugtong na Anak, upang ang sinomang sa kaniya'y sumampalataya ay huwag mapahamak, kundi magkaroon ng buhay na walang hanggan. "
+  ]
+}
+```
+
+### 2. Daily Verse
+
+```typescript
+const biblegateway = require("biblegateway-scrape");
+
+async function getDaily() {
+  // Get today's verse
+  const today = await biblegateway.daily_verse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905);
+  console.log(today);
+
+  // Get verse for a specific date [Year, Month, Day]
+  const specificDate = await biblegateway.daily_verse(biblegateway.version.TAG_ANG_DATING_BIBLIYA_1905, [2024, 12, 25]);
+  console.log(specificDate);
+}
+
+getDaily();
+```
+
+### 3. Audio Bible
+
+```typescript
+const biblegateway = require("biblegateway-scrape");
+
+async function getAudio() {
+  const audio = await biblegateway.audio("John 1", biblegateway.audio_version.KJV_PAUL_MIMS);
+  console.log(audio);
+}
+
+getAudio();
+```
+
+**Output:**
+```json
+{
+  "result_code": 200,
+  "mp3": "https://stream.biblegateway.com/bibles/32/kjv-mims/John.1.mp3",
+  "copyright": "© 2007 All Rights Reserved The Spoken Word of God."
 }
 ```
 
 ---
 
-### Versions:
+## 🛠️ Parameters
 
-- CSB_JON_MOHR
-- ESV_MAX_MCLEAN
-- ESV_MARQUIS_LAUGHLIN
-- GNV_STEVE_COOK
-- HCSB_DALE_MCCONACHIE
-- KJV_MAX_MCLEAN
-- KJV_PAUL_MIMS
-- KJV_DRAMATIZED
-- LEB_LOGOS
-- MSG_KELLY_RYAN_DOLAN
-- NASB_DALE_MCCONACHIE
-- NASB1995_DALE_MCCONACHIE
-- NIV_MAX_MCLEAN
-- NIV_DRAMATIZED
-- NIV_GEORGE_W_SARRIS
-- NIVUK_DAVID_SUCHET
-- NKJV_SIMON_BUBB
-- NKJV_TINASHA_LARAYE
-- NLT_BREATHE
+### Bible Versions (`biblegateway.version`)
 
-### Note:
+| Language | Constant Name |
+| :--- | :--- |
+| **Tagalog** | `TAG_ANG_DATING_BIBLIYA_1905`, `TAG_ANG_BIBLIA_1978`, `TAG_ANG_BIBLIA_2001`, `TAG_ANG_BAGONG_TIPAN`, `TAG_ANG_SALITA_NG_DIYOS`, `TAG_MAGANDANG_BALITA` |
+| **Baybayin** | `BAYBAYIN_ANG_DATING_BIBLIYA_1905`, `BAYBAYIN_ANG_BIBLIA_1978`, `BAYBAYIN_MAGANDANG_BALITA` (and others with `BAYBAYIN_` prefix) |
+| **English** | `ENG_KING_JAMES_VERSION`, `ENG_NEW_INTERNATIONAL_VERSION`, `ENG_STANDARD_VERSION`, `ENG_AMPLIFIED_BIBLE`, `ENG_MESSAGE`, `ENG_NEW_LIVING_TRANSLATION` |
+| **Cebuano** | `CEB_ANG_PULONG_SA_DIOS` |
+| **Ilonggo** | `ILO_ANG_PULONG_SANG_DIOS_HLGN` |
 
-> Some errors regarding to translations may have, I still trying to fix this kind of error, that maybe on my next version, this error will be fixed. If you found an error, you may send me the version thru my [email](mailto:werysesw19@gmail.com), or thru my [facebook page](https://web.facebook.com/NOOBgrammer2001), or create an issue thru my repository on github.
+*(Refer to `src/actions/version.ts` for the full list of over 50+ supported versions.)*
 
-### Final speech
+### Audio Versions (`biblegateway.audio_version`)
 
-> The program is still in development, as of now, I'm looking for some errors, specially to the others translations. If ever that you've found a version with error, kindly message my facebook page, which is mentioned above. Thank you for using, and I hope it helps. I also added baybayin scripting, but the baybayin script version has bugs still.
+- `KJV_PAUL_MIMS`
+- `KJV_MAX_MCLEAN`
+- `KJV_DRAMATIZED`
+- `NIV_MAX_MCLEAN`
+- `NIV_DRAMATIZED`
+- `NLT_BREATHE`
+- `ESV_MAX_MCLEAN`
+- `MSG_KELLY_RYAN_DOLAN`
+- ...and more.
 
 ---
 
-### Changes
+## 📜 Changelog
 
-> The project was changed from its last update, I've found some errors regarding to the other translations, or maybe one of the errors having is thru the update of the platfrorm. Another one is the ogg file was removed, so that we may only use the mp3 file format. If ever that you want to use this project, kindly give credits to the biblegateway, I'm just a way to create a better package for you to use their service. And kindly add the copyright, for you to have the permission to use their resources.
+### v0.1.1 (2026-04-03)
+- Updated README with comprehensive "How to", parameter lists, and detailed changelog.
+- Bumped version for new documentation release.
+
+### v0.1.0 (2025-10-26)
+- Fixed bugs in version 0.0.9.
+- Fixed `daily_verse` fetching issues.
+- Improved overall stability.
+
+### v0.0.9 (2025-10-26)
+- Cleaned up Baybayin transliteration logic.
+- Initial TypeScript implementation and structure.
+
+### v0.0.1 - v0.0.8
+- Initial web scraping implementation for BibleGateway.
+- Basic support for Tagalog and English versions.
+- Added audio support (MP3).
 
 ---
 
-### Credits
+## 📄 License
 
-> Facebook Bot
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-- Salvador
-- John Jeremy Antiguo
-- Callback Developers
-- Earl Shine Sawir
-- John Pau; Caigas
-- Lester Navarra
-- Mark Kevin Manalo
-- Rovie Francisco
-- Jerson Carin
+## 🤝 Credits & Acknowledgements
 
-> NodeJS exploration
+- **Bible Gateway**: For providing the amazing resource this scraper uses.
+- **Contributors**: RyannKim327, Salvador, John Jeremy Antiguo, and many others.
+- **NodeJS Community**: For the tools and libraries that made this possible.
 
-- Mart Anthony Salazar
-- John Roy Lapida Calimlim
+---
 
-> NPMJS Package Related
-
-- John Paul Caigas
-- Lester Navarra
-
-> Website
-
-- Bible Gateway
-- NPMJS
-- Replit
-- Github
-- Stackoverflow
-- Facebook
-- GeeksforGeeks
+> **Note**: This is a web-scraping project. Please use it responsibly and respect Bible Gateway's terms of service. Always provide credit and copyright information when using their resources.
